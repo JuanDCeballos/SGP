@@ -110,7 +110,7 @@ nav a:hover {
   color: var(--naranjado);
 }
 
-/* Login styles
+/* Main container styles
 -------------------------------------------------- */
 
 .container-content {
@@ -120,10 +120,29 @@ nav a:hover {
   align-items: center;
 }
 
+/* Login styles
+-------------------------------------------------- */
+
 .login-container {
   display: flex;
   flex-direction: column;
   width: 15vw;
   margin: 50px;
   gap: 10px;
+}
+
+/* Recover password styles
+-------------------------------------------------- */
+
+.recover-password-container {
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  margin: 50px;
+  gap: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
 }
