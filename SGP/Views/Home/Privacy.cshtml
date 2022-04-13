@@ -1,6 +1,16 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Recuperar contraseña";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<h1 class="title">@ViewData["Title"]</h1>
+
+<div class="recover-password-container">
+    <label for="">Ingresar documento</label>
+    <input type="text" placeholder="Documento aquí...">
+    <label for="">Ingresar correo</label>
+    <input type="text" placeholder="Correo aquí...">
+    <div class="buttons">
+        <button class="btn btn-secondary">Enviar código</button>
+        <button class="btn btn-secondary">Cancelar</button>
+    </div>
+</div>
