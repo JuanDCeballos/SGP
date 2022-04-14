@@ -21,6 +21,12 @@ body {
   --naranjado: #dda15e;
 }
 
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn {
   background-color: var(--verde-oscuro);
   color: white;
@@ -142,7 +148,7 @@ nav a:hover {
   gap: 10px;
 }
 
-/* .buttons {
+.buttons {
   display: flex;
   justify-content: space-around;
-} */
+}
