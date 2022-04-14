@@ -21,6 +21,12 @@ body {
   --naranjado: #dda15e;
 }
 
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn {
   background-color: var(--verde-oscuro);
   color: white;
@@ -145,4 +151,146 @@ nav a:hover {
 .buttons {
   display: flex;
   justify-content: space-around;
+}
+
+/* Crear usuario styles
+-------------------------------------------------- */
+
+.Tdocumento{
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+}
+
+.Nombres{
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+}
+
+.Apellidos{
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+  }
+
+.bl1{
+  
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+ 
+}
+
+.ndocumento{
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+  }
+
+.correo{
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    }
+
+.direccion{
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+      }
+
+.bl2{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+      }      
+      
+.rol{
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+  }
+    
+.telefono{
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+  }  
+        
+.genero{
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+  }
+
+
+.bl3{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+            }    
+
+.fecha{
+display: flex;
+flex-direction: column;
+margin: 5%;
+}
+
+.programa{
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+  }
+       
+.bl4{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+  
+  }  
+
+
+  /* Administrar usuarios styles
+-------------------------------------------------- */
+
+
+.barra-busqueda{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.barra-busqueda{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 8%;
 }
