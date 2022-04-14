@@ -29,7 +29,7 @@ body {
 
 .btn {
   background-color: var(--verde-oscuro);
-  color: red;
+  color: green;
   border: none;
   outline: none;
 }
