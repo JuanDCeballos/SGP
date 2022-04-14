@@ -29,11 +29,7 @@ body {
 
 .btn {
   background-color: var(--verde-oscuro);
-<<<<<<< HEAD
-  color: green;
-=======
   color: rgb(255, 255, 255);
->>>>>>> cd64a2d258190dfed977121e06881770306cfae4
   border: none;
   outline: none;
 }
