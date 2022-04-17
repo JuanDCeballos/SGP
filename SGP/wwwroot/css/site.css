@@ -14,7 +14,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.title{
+.title {
   display: flex;
   text-align: center;
 }
@@ -42,7 +42,6 @@ body {
 .btn:hover {
   color: var(--naranjado);
 }
-
 
 .btn:focus {
   box-shadow: none;
@@ -315,46 +314,44 @@ tr:nth-child(even) {
   gap: 10px;
 }
 
-
 /* Crear usuario styles
 -------------------------------------------------- */
 
-.blo1{
-  display:flex;
+.blo1 {
+  display: flex;
   justify-content: center;
   text-align: center;
 }
 
-.blo1 div{
+.blo1 div {
   margin: 3vw;
 }
 
-.bl2{
-  display:flex;
+.bl2 {
+  display: flex;
   justify-content: center;
   text-align: center;
 }
 
-.bl2 div{
+.bl2 div {
   margin: 3vw;
 }
 
-.bl3{
-  display:flex;
+.bl3 {
+  display: flex;
   justify-content: center;
   text-align: center;
 }
 
-.bl3 div{
+.bl3 div {
   margin: 4vw;
 }
-
 
 /* Administrar usuario
 -------------------------------------------------- */
 
-.bltbl{
-  display:flex;
+.bltbl {
+  display: flex;
   justify-content: center;
   text-align: center;
 }
@@ -363,8 +360,8 @@ table {
   width: 100%;
   border: 1px solid #000;
 }
-th, td {
-  
+th,
+td {
   text-align: center;
   vertical-align: center;
   border: 1px solid #000;
@@ -373,16 +370,15 @@ th, td {
   caption-side: bottom;
 }
 caption {
-
   color: #fff;
-   background: #000;
+  background: #000;
 }
 th {
   background: #eee;
 }
 
-.barra-busqueda{
-  display:flex;
+.barra-busqueda {
+  display: flex;
   padding: 1vw;
   flex-direction: column;
   justify-content: center;
@@ -392,41 +388,66 @@ th {
 /* Pago matricula style
 -------------------------------------------------- */
 
-
-.btnPago{
-background-color: #283618;
-color: #eee;
+.btnPago {
+  background-color: #283618;
+  color: #eee;
 }
 
-.bltbl{
-  display:flex;
+.bltbl {
+  display: flex;
   margin: 3vw;
   justify-content: center;
   text-align: center;
 }
-
 
 /* Actualizar inf. Style
 -------------------------------------------------- */
-.bltbl2{
-  display:flex;
+.bltbl2 {
+  display: flex;
   margin: 3vw;
   justify-content: center;
   text-align: center;
 }
 
-.egr{
-  display:flex;
+.egr {
+  display: flex;
   flex-direction: column;
   margin: 1vw;
   justify-content: center;
   text-align: center;
 }
 
-.cf{
-  display:flex;
+.cf {
+  display: flex;
   flex-direction: column;
   margin: 1vw;
   justify-content: center;
   text-align: center;
+}
+
+/* Perfil Style
+-------------------------------------------------- */
+
+.principal {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
 }
