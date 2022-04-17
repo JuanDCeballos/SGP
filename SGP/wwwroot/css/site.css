@@ -14,6 +14,11 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.title{
+  display: flex;
+  text-align: center;
+}
+
 :root {
   --fondo: #fefae0;
   --verde-oscuro: #283618;
@@ -37,6 +42,7 @@ body {
 .btn:hover {
   color: var(--naranjado);
 }
+
 
 .btn:focus {
   box-shadow: none;
@@ -151,4 +157,120 @@ nav a:hover {
 .buttons {
   display: flex;
   justify-content: space-around;
+}
+
+
+/* Crear usuario styles
+-------------------------------------------------- */
+
+.blo1{
+  display:flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.blo1 div{
+  margin: 3vw;
+}
+
+.bl2{
+  display:flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.bl2 div{
+  margin: 3vw;
+}
+
+.bl3{
+  display:flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.bl3 div{
+  margin: 4vw;
+}
+
+
+/* Administrar usuario
+-------------------------------------------------- */
+
+.bltbl{
+  display:flex;
+  justify-content: center;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border: 1px solid #000;
+}
+th, td {
+  
+  text-align: center;
+  vertical-align: center;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 1vw;
+  caption-side: bottom;
+}
+caption {
+
+  color: #fff;
+   background: #000;
+}
+th {
+  background: #eee;
+}
+
+.barra-busqueda{
+  display:flex;
+  padding: 1vw;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Pago matricula style
+-------------------------------------------------- */
+
+
+.btnPago{
+background-color: #283618;
+color: #eee;
+}
+
+.bltbl{
+  display:flex;
+  margin: 3vw;
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* Actualizar inf. Style
+-------------------------------------------------- */
+.bltbl2{
+  display:flex;
+  margin: 3vw;
+  justify-content: center;
+  text-align: center;
+}
+
+.egr{
+  display:flex;
+  flex-direction: column;
+  margin: 1vw;
+  justify-content: center;
+  text-align: center;
+}
+
+.cf{
+  display:flex;
+  flex-direction: column;
+  margin: 1vw;
+  justify-content: center;
+  text-align: center;
 }

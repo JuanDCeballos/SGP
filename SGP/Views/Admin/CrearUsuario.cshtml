@@ -4,87 +4,83 @@
 }
 
 <h1 class="title">@ViewData["Title"]</h1>
-<div class="bloque">
 
-<div class="bl1">
-     
- <div class="Tdocumento"><label for="">Tipo de documento:</label>
-   
-    <select name="Documento">
-        <option>Tarjeta de identidad</option>
-        <option>Cedula</option>
-        <option>C.E </option>
-        <option>T.I </option>
+<div class="blo1">
+<div><form> 
+<label> Tipo de documento</label><br>
+<select name=”provincia”>
+<option value=”av”>Cedula</option>
+<option value=”bu”>T.I</option>
+<option value=”bu”>Pasaporte</option>
+<option value=”bu”>C.E</option>
+</select>
+</form></div>
 
-    </select></div>
+<div><form> 
+<label> Tipo de documento:</label><br>
+<select name=”documento”>
+<option value=”av”>Cedula</option>
+<option value=”bu”>T.I</option>
+<option value=”bu”>Pasaporte</option>
+<option value=”bu”>C.E</option>
+</select>
+</form></div>
 
- <div class="Nombres"><label for="">Nombres:</label>
- <input type="text" placeholder="Nombres..."></div>
+<div><form> 
+<label> Programa:</label><br>
+<select name=”prgrama”>
+<option value=”av”>MGTI</option>
+<option value=”bu”>Mestria</option>
+<option value=”bu”>Pasaporte</option>
+<option value=”bu”>Esp.SI</option>
+</select>
+</form></div>
 
- <div class="Apellidos"><label for="">Apellidos:</label>
- <input type="text" placeholder="Apellidos..."></div>
+<div><form> 
+<label> Rol:</label><br>
+<select name=”rol”>
+<option value=”av”>Administrador</option>
+<option value=”bu”>Estudiante</option>
+<option value=”bu”>Coordinador</option>
+</select>
+</form></div>
 
+<div><form> 
+<label> Genero:</label><br>
+<select name=”genero”>
+<option value=”av”>Masculino</option>
+<option value=”bu”>Femenino</option>
+<option value=”bu”>Otro</option>
+</select>
+</form></div>
 </div>
 
-<div class="bl2">
+<div class=bl2>
+<div><label for="">Ingresar el nombre completo:</label>
+<input type="text" placeholder="Nombre aquí..."></div>
 
-   <div class="ndocumento"><label for="">Numero de documento:</label>
-   <input type="text" placeholder="Numero de documento..."></div>
+<div><label for="">Ingresar el documento:</label>
+<input type="text" placeholder="Documento aquí..."></div>
 
-   <div class="correo"><label for="">Correo:</label>
-   <input type="text" placeholder="correo..."></div>
-
-   <div class="direccion"><label for="">Direccion:</label>
-   <input type="text" placeholder="Direccion..."></div>
-
+<div><label for="">Ingresar el correo:</label>
+<input type="text" placeholder="Documento aquí..."></div>
 </div>
-<div class="bl3">
 
- <div class="rol"><label for="">Rol:</label>
-   
-    <select name="Documento">
-        <option>Estudiante</option>
-        <option>Administrador</option>
-        <option>Coordinador</option>
-    </select></div>
+<div class=bl3>
+<div><label for="">Ingresar la direccion:</label>
+<input type="text" placeholder="Direccion aquí..."></div>
 
-   <div class="telefono"><label for="">Telefono:</label>
-   <input type="text" placeholder="Telefono"></div>
+<div><label for="start">Dia de nacimiento:</label>
 
-   
- <div class="genero"><label for="">Genero:</label>
-
-    <select name="Genero">
-        <option>Masculino</option>
-        <option>Femenino</option>
-        <option>Otres</option>
-    </select></div>
-
-</div>    
-<div class="bl4">
-
- <div class="fecha"><label for="start">Fecha de nacimiento:</label>
-
- <input type="date" id="start" name="Calendario"
+<input type="date" id="start" name="trip-start"
        value="2018-07-22"
-       min="1995-01-01" max="2030-12-31"></div>
+       min="2018-01-01" max="2018-12-31"> </div>
 
- <div class="programa"><label for="">Programa:</label>
-
-    <select name="Programa">
-        <option>Maestria</option>
-        <option>MGTI</option>
-        <option>Esp.TI</option>
-    </select></div> 
-</div>   
-
-<div class="buttons">
-        <button class="btn btn-secondary">Guardar</button>
-        <button class="btn btn-secondary">cancelar</button>
-    </div>
-
-
-
-
-
+<div><label for="">Ingresar el telefono:</label>
+<input type="text" placeholder="Telefono aquí..."></div>
 </div>
+
+ <div class="buttons">
+        <button class="btn btn-secondary">Cancelar</button>
+        <button class="btn btn-secondary">Guardar</button>
+    </div>

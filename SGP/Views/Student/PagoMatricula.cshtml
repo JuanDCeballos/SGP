@@ -1,0 +1,28 @@
+
+@{
+    ViewData["Title"] = "PagoMatricula";
+}
+
+<h1 class="title">Pago matricula</h1>
+
+<div class="bltbl"><table>
+  <tr>
+    <th>No. pago</th>
+    <th>Valor pago</th>
+    <th>Fecha pago</th>
+    <th>Comprobante</th>
+  </tr>
+  <tr>
+    <td>778997845</td>
+    <td><input type="text" placeholder="Valor..."></td>
+    <td> <input type="date" id="start" name="Calendario"
+       value="2018-07-22"
+       min="1995-01-01" max="2030-12-31"></td>
+    <td><input class="btnPago" type="file" readonly="readonly" value="Subir archivo" /></td>   
+  </tr>
+</table>
+</div>
+<div class="buttons">
+        <button class="btn btn-secondary">Cancelar</button>
+        <button class="btn btn-secondary">Guardar</button>
+    </div>
