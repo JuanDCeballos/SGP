@@ -1,0 +1,71 @@
+@{
+    ViewData["Title"] = "Entrevistas";
+}
+
+<h1 class="title">@ViewData["Title"]</h1>
+<div class="bloque">
+
+<div class="barra-busqueda"> 
+    <label for="">Buscar documento</label>
+    <input type="text" placeholder="Documento aquí...">
+</div>
+
+<div class="bl1">
+     
+ <div class="Tdocumento">
+     <label for="">Tipo de documento:</label>
+   
+        <select name="Documento">
+            <option>Tarjeta de identidad</option>
+            <option>Cedula</option>
+            <option>C.E </option>
+            <option>T.I </option>
+
+        </select>
+    </div>
+
+    <div class="programa">
+        <label for="">Programa:</label>
+
+        <select name="Programa">
+            <option>Maestria</option>
+            <option>MGTI</option>
+            <option>Esp.TI</option>
+        </select>
+    </div> 
+
+    <div class="Nombres"><label for="">Telefono:</label>
+    <input type="text" placeholder="Telefono..."></div>
+</div>
+
+<div class="bl2">
+
+   <div class="ndocumento"><label for="">Numero de documento:</label>
+   <input type="text" placeholder="Numero de documento..."></div>
+
+   <div class="genero">
+       <label for="">Genero:</label>
+
+        <select name="Genero">
+            <option>Masculino</option>
+            <option>Femenino</option>
+            <option>Otres</option>
+        </select>
+    </div>
+
+   <div class="correo"><label for="">Correo:</label>
+   <input type="text" placeholder="correo..."></div>
+</div>
+
+<div class="barra-busqueda"> 
+    <p>¿Es egresado?</p>
+    <div class="r-buttons">
+        <button class="btn btn-secondary">Si</button>
+        <button class="btn btn-secondary">No</button>
+    </div>
+</div>
+
+<div class="buttons">
+    <button class="btn btn-secondary">Guardar</button>
+    <button class="btn btn-secondary">cancelar</button>
+</div>

@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Programar Asignaturas";
+}
+
+<h1 class="title">Programar Asignaturas</h1>
+
+<div class="Asignatura-contenedor">
+    <div class="select-semestre">
+        <input type="number" min="1" max="10">
+    </div>
+    <div class="select-programa">
+        <select name="Programa">
+        <option>Maestria</option>
+        <option>MGTI</option>
+        <option>Esp.TI</option>
+        </select>
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <th>Fecha inicio</th>
+            <th>Fecha fin</th>
+            <th>Bloque</th>
+            <th>Sala. Modulo</th>
+            <th>Codigo asignatura</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="date">
+            </td>
+            <td>
+                <input type="date">
+            </td>
+            <td>
+                <input type="number" min="1" max="13">
+            </td>
+            <td>
+                <input type="text">
+            </td>
+            <td>
+                <input type="text">
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="buttons">
+    <button class="btn btn-secondary">Volver</button>
+    <button class="btn btn-secondary">Añadir</button>
+</div>
