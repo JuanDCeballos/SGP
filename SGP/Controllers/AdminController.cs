@@ -17,5 +17,10 @@ namespace SGP.Controllers
         {
             return View();
         }
+
+        public IActionResult Admin()
+        {
+            return View();
+        }
     }
 }
