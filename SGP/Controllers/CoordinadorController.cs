@@ -27,5 +27,10 @@ namespace SGP.Controllers
         {
             return View();
         }
+
+        public IActionResult Coordinador()
+        {
+            return View();
+        }
     }
 }
