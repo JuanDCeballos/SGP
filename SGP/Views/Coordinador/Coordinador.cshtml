@@ -10,14 +10,14 @@
         <div class="info-info">
             <p>Jose</p>
             <p>Coockle</p>
-            <a href="">Cerrar usuario</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index">Cerrar usuario</a>
         </div>
     </div>
     <div class="ctas">
         <h1 class="title">Coordinador</h1>
-        <button class="btn">Consulta</button>
-        <button class="btn">Programar asignaturas</button>
-        <button class="btn">Homologar</button>
-        <button class="btn">Entrevistass</button>
+        <button class="btn"><a class="nav-link" asp-area="" asp-controller="Coordinador" asp-action="Consulta">Consulta</a></button>
+        <button class="btn"><a class="nav-link" asp-area="" asp-controller="Coordinador" asp-action="ProgramarAsignaturas">Programar asignaturas</a></button>
+        <button class="btn"><a class="nav-link" asp-area="" asp-controller="Coordinador" asp-action="Homologar">Homologar</a></button>
+        <button class="btn"><a class="nav-link" asp-area="" asp-controller="Coordinador" asp-action="Entrevistas">Entrevistas</a></button>
     </div>
 </div>
