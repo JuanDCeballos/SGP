@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SGP.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,13 @@ namespace SGP.Controllers
 {
     public class AdminController : Controller
     {
+
+        private SGPContext context;
+
+        public AdminController(SGPContext context) {
+            context = context;
+        }
+
         public IActionResult AdministrarUsuario()
         {
             return View();
@@ -15,6 +23,7 @@ namespace SGP.Controllers
 
         public IActionResult CrearUsuario()
         {
+
             return View();
         }
 

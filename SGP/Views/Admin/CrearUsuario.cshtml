@@ -27,6 +27,12 @@
 </select>
 </form></div>
 
+
+<div>
+    <label>Rol</label>
+    @Html.DropDownList("IdRol", new SelectList(ViewBag.rol, "IdRol", "IdRol"))
+</div>
+
 <div><form> 
 <label> Rol:</label><br>
 <select name=”rol”>
