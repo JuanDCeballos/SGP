@@ -1,11 +1,20 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
 
 namespace SGP.Models
 {
-    public class TipoDocumento
+    public partial class TipoDocumento
     {
-        public int IdTipDoc { get; set; }
+        public TipoDocumento()
+        {
+            Usuarios = new HashSet<Usuario>();
+        }
 
+        public int IdTipoDoc { get; set; }
         public string ValTipoDoc { get; set; }
+
+        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }

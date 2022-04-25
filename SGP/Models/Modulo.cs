@@ -1,15 +1,25 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
 
 namespace SGP.Models
 {
-    public class Modulo
+    public partial class Modulo
     {
+        public Modulo()
+        {
+            Homologacions = new HashSet<Homologacion>();
+            Programacions = new HashSet<Programacion>();
+        }
+
         public int IdModulo { get; set; }
-
         public string ValModulo { get; set; }
+        public int? Creditos { get; set; }
+        public int? IdPrograma { get; set; }
 
-        public int Creditos { get; set; }
-
-        public int IdPrograma { get; set; }
+        public virtual Programa IdProgramaNavigation { get; set; }
+        public virtual ICollection<Homologacion> Homologacions { get; set; }
+        public virtual ICollection<Programacion> Programacions { get; set; }
     }
 }

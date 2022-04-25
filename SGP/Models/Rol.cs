@@ -1,11 +1,20 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
 
 namespace SGP.Models
 {
-    public class Rol
+    public partial class Rol
     {
-        public int IdRol { get; set; }
+        public Rol()
+        {
+            Usuarios = new HashSet<Usuario>();
+        }
 
+        public int IdRol { get; set; }
         public string ValRol { get; set; }
+
+        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }

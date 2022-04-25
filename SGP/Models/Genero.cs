@@ -1,11 +1,20 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
 
 namespace SGP.Models
 {
-    public class Genero
+    public partial class Genero
     {
-        public int IdGenero { get; set; }
+        public Genero()
+        {
+            Usuarios = new HashSet<Usuario>();
+        }
 
+        public int IdGenero { get; set; }
         public string ValGenero { get; set; }
+
+        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }
