@@ -9,11 +9,11 @@ namespace SGP.Controllers
 {
     public class AdminController : Controller
     {
-
+        
         private SGPContext context;
 
-        public AdminController(SGPContext context) {
-            context = context;
+        public AdminController(SGPContext contexto) {
+            context = contexto;
         }
 
         public IActionResult AdministrarUsuario()
@@ -23,6 +23,8 @@ namespace SGP.Controllers
 
         public IActionResult CrearUsuario()
         {
+
+            ViewBag.rol = context.Rols.ToList();
 
             return View();
         }
