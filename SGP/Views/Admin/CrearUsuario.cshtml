@@ -20,13 +20,8 @@
         </div>
 
         <div>
-            <label> Programa:</label><br>
-                <select name=”prgrama”>
-                    <option value=”av”>MGTI</option>
-                    <option value=”bu”>Mestria</option>
-                    <option value=”bu”>Pasaporte</option>
-                    <option value=”bu”>Esp.SI</option>
-                </select>
+            <label asp-for="IdPrograma">Programa</label>
+            @Html.DropDownList("IdPrograma", new SelectList(ViewBag.Programa, "IdPrograma", "ValPrograma"));
         </div>
 
         <div>
