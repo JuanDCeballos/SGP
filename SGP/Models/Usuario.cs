@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -16,11 +17,16 @@ namespace SGP.Models
 
         public int IdUsuario { get; set; }
         public string Nombre { get; set; }
+
+        [Required]
+        [MinLength(10)]
         public string Apellido { get; set; }
         public int? Genero { get; set; }
         public int? TipoDoc { get; set; }
         public string Documento { get; set; }
         public int? IdPrograma { get; set; }
+
+        [EmailAddress]
         public string Email { get; set; }
         public int? Telefono { get; set; }
         public int? Rol { get; set; }
