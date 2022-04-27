@@ -23,6 +23,7 @@ namespace SGP.Controllers
 
         public IActionResult CrearUsuario()
         {
+            ViewBag.programa = context.Programas.ToList();
             ViewBag.genero = context.Generos.ToList();
             ViewBag.rol = context.Rols.ToList();
 
@@ -35,6 +36,8 @@ namespace SGP.Controllers
             context.Add(usuario);
             context.SaveChanges();
             ViewBag.genero = context.Generos.ToList();
+            ViewBag.rol = context.Rols.ToList();
+            ViewBag.programa = context.Programas.ToList();
 
             return View();
         }
