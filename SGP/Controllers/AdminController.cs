@@ -23,8 +23,18 @@ namespace SGP.Controllers
 
         public IActionResult CrearUsuario()
         {
-
+            ViewBag.genero = context.Generos.ToList();
             ViewBag.rol = context.Rols.ToList();
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CrearUsuario(Usuario usuario)
+        {
+            context.Add(usuario);
+            context.SaveChanges();
+            ViewBag.genero = context.Generos.ToList();
 
             return View();
         }
