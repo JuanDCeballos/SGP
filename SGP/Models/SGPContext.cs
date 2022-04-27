@@ -33,8 +33,7 @@ namespace SGP.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-PL0F26T\\SQLEXPRESS;Database=SGP;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-8BRUE8S\\SQLEXPRESS;Database=SGP;Trusted_Connection=True;");
             }
         }
 
@@ -45,7 +44,7 @@ namespace SGP.Models
             modelBuilder.Entity<Entrevistum>(entity =>
             {
                 entity.HasKey(e => e.IdEntrevista)
-                    .HasName("PK__Entrevis__EE6CE9C7FD8F0C6B");
+                    .HasName("PK__Entrevis__EE6CE9C7CF28E7B8");
 
                 entity.Property(e => e.Estado)
                     .HasMaxLength(50)
@@ -62,7 +61,7 @@ namespace SGP.Models
             modelBuilder.Entity<Genero>(entity =>
             {
                 entity.HasKey(e => e.IdGenero)
-                    .HasName("PK__Genero__0F834988AC8123F6");
+                    .HasName("PK__Genero__0F834988CD759434");
 
                 entity.ToTable("Genero");
 
@@ -74,7 +73,7 @@ namespace SGP.Models
             modelBuilder.Entity<Homologacion>(entity =>
             {
                 entity.HasKey(e => e.IdHomologacion)
-                    .HasName("PK__Homologa__C7746319493A87F6");
+                    .HasName("PK__Homologa__C7746319EE6414DC");
 
                 entity.ToTable("Homologacion");
 
@@ -87,23 +86,23 @@ namespace SGP.Models
                 entity.HasOne(d => d.IdModuloNavigation)
                     .WithMany(p => p.Homologacions)
                     .HasForeignKey(d => d.IdModulo)
-                    .HasConstraintName("FK__Homologac__IdMod__5165187F");
+                    .HasConstraintName("FK__Homologac__IdMod__5070F446");
 
                 entity.HasOne(d => d.IdProgramaNavigation)
                     .WithMany(p => p.Homologacions)
                     .HasForeignKey(d => d.IdPrograma)
-                    .HasConstraintName("FK__Homologac__IdPro__5070F446");
+                    .HasConstraintName("FK__Homologac__IdPro__4F7CD00D");
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Homologacions)
                     .HasForeignKey(d => d.IdUsuario)
-                    .HasConstraintName("FK__Homologac__IdUsu__52593CB8");
+                    .HasConstraintName("FK__Homologac__IdUsu__5165187F");
             });
 
             modelBuilder.Entity<Modulo>(entity =>
             {
                 entity.HasKey(e => e.IdModulo)
-                    .HasName("PK__Modulo__D9F153152716CB0C");
+                    .HasName("PK__Modulo__D9F153157E172A35");
 
                 entity.ToTable("Modulo");
 
@@ -114,13 +113,13 @@ namespace SGP.Models
                 entity.HasOne(d => d.IdProgramaNavigation)
                     .WithMany(p => p.Modulos)
                     .HasForeignKey(d => d.IdPrograma)
-                    .HasConstraintName("FK__Modulo__IdProgra__4D94879B");
+                    .HasConstraintName("FK__Modulo__IdProgra__4CA06362");
             });
 
             modelBuilder.Entity<Pago>(entity =>
             {
                 entity.HasKey(e => e.IdPago)
-                    .HasName("PK__Pagos__FC851A3A42241B6B");
+                    .HasName("PK__Pagos__FC851A3A3DEE69C7");
 
                 entity.Property(e => e.ComprobantePago)
                     .HasMaxLength(200)
@@ -137,7 +136,7 @@ namespace SGP.Models
             modelBuilder.Entity<Programa>(entity =>
             {
                 entity.HasKey(e => e.IdPrograma)
-                    .HasName("PK__Programa__AF94ECA503EC441F");
+                    .HasName("PK__Programa__AF94ECA5693AED8E");
 
                 entity.ToTable("Programa");
 
@@ -153,7 +152,7 @@ namespace SGP.Models
             modelBuilder.Entity<ProgramaUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdProgramaUsuario)
-                    .HasName("PK__Programa__A45CB1084ABAA459");
+                    .HasName("PK__Programa__A45CB108B5DC5313");
 
                 entity.ToTable("ProgramaUsuario");
 
@@ -166,7 +165,7 @@ namespace SGP.Models
             modelBuilder.Entity<Programacion>(entity =>
             {
                 entity.HasKey(e => e.IdProgramacion)
-                    .HasName("PK__Programa__74E652C07A2A5C4F");
+                    .HasName("PK__Programa__74E652C04A4440C2");
 
                 entity.ToTable("Programacion");
 
@@ -185,13 +184,13 @@ namespace SGP.Models
                 entity.HasOne(d => d.IdModuloNavigation)
                     .WithMany(p => p.Programacions)
                     .HasForeignKey(d => d.IdModulo)
-                    .HasConstraintName("FK__Programac__IdMod__5535A963");
+                    .HasConstraintName("FK__Programac__IdMod__5441852A");
             });
 
             modelBuilder.Entity<Rol>(entity =>
             {
                 entity.HasKey(e => e.IdRol)
-                    .HasName("PK__Rol__2A49584CACF8CCDA");
+                    .HasName("PK__Rol__2A49584C6A574998");
 
                 entity.ToTable("Rol");
 
@@ -203,7 +202,7 @@ namespace SGP.Models
             modelBuilder.Entity<TipoDocumento>(entity =>
             {
                 entity.HasKey(e => e.IdTipoDoc)
-                    .HasName("PK__TipoDocu__08119E68921EBF86");
+                    .HasName("PK__TipoDocu__08119E684F416C31");
 
                 entity.ToTable("TipoDocumento");
 
@@ -215,7 +214,7 @@ namespace SGP.Models
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__Usuario__5B65BF97969391B2");
+                    .HasName("PK__Usuario__5B65BF97B93F6073");
 
                 entity.ToTable("Usuario");
 
