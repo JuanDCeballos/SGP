@@ -8,15 +8,9 @@
 
 <form method="post">
     <div class="blo1">
-
         <div>
-            <label> Tipo de documento:</label><br>
-            <select name=”documento”>
-                <option value=”av”>Cedula</option>
-                <option value=”bu”>T.I</option>
-                <option value=”bu”>Pasaporte</option>
-                <option value=”bu”>C.E</option>
-            </select>
+            <label asp-for="TipoDoc">Tipo de documento</label>
+            @Html.DropDownList("TipoDoc", new SelectList(ViewBag.tipoDoc, "IdTipoDoc", "ValTipoDoc"));
         </div>
 
         <div>
@@ -31,10 +25,10 @@
 
         <div>
             <label asp-for="Rol">Rol</label>
-            @Html.DropDownList("IdRol", new SelectList(ViewBag.rol, "IdRol", "ValRol"))
+            @Html.DropDownList("Rol", new SelectList(ViewBag.rol, "IdRol", "ValRol"))
         </div>
 
-        <div class=bl2>
+        <div class="bl2">
             <div>
                 <label asp-for="Nombre">Ingresar el nombre:</label>
                 <input asp-for="Nombre" type="text" placeholder="Nombre aquí...">
@@ -56,7 +50,7 @@
             </div>
         </div>
 
-        <div class=bl3>
+        <div class="bl3">
             <div>
                 <label asp-for="Direccion">Ingresar la direccion:</label>
                 <input asp-for="Direccion" type="text" placeholder="Direccion aquí...">
@@ -79,4 +73,5 @@
             <button class="btn btn-secondary">Cancelar</button>
             <button class="btn btn-secondary" type="submit">Guardar</button>
         </div>
+    </div>
 </form>
