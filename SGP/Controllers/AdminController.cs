@@ -44,6 +44,14 @@ namespace SGP.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult AdministrarUsuario(Usuario usuario)
+        {
+            var buscarUsuario = context.Usuarios.Find(1);
+
+            return View();
+        }
+
         public IActionResult Admin()
         {
             return View();
