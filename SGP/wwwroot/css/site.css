@@ -20,10 +20,10 @@ body {
 }
 
 :root {
-  --fondo: #fefae0;
-  --verde-oscuro: #283618;
-  --verde: #606c38;
-  --naranjado: #dda15e;
+    --fondo: #fefae0;
+    --verde-oscuro: #283618;
+    --verde: #606c38;
+    --naranjado: #dda15e;
 }
 
 .title {
@@ -265,6 +265,7 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 20px;
 }
 
 table {
@@ -291,6 +292,7 @@ tr:nth-child(even) {
   align-items: center;
   text-align: center;
   margin: 8%;
+  gap: 20px;
 }
 
 /* Programar asignaturas styles
@@ -319,6 +321,7 @@ tr:nth-child(even) {
 
 .blo1 {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
 }
