@@ -26,6 +26,7 @@ namespace SGP.Controllers
             ViewBag.programa = context.Programas.ToList();
             ViewBag.genero = context.Generos.ToList();
             ViewBag.rol = context.Rols.ToList();
+            ViewBag.tipoDoc = context.TipoDocumentos.ToList();
 
             return View();
         }
@@ -38,6 +39,7 @@ namespace SGP.Controllers
             ViewBag.genero = context.Generos.ToList();
             ViewBag.rol = context.Rols.ToList();
             ViewBag.programa = context.Programas.ToList();
+            ViewBag.tipoDoc = context.TipoDocumentos.ToList();
 
             return View();
         }
