@@ -29,7 +29,7 @@ namespace SGP
 
             string connectionString = ConfigurationExtensions
                 .GetConnectionString(this.Configuration,
-                                     "DefaultConnectionString");
+                                     "DefaultConnectionStringU");
             services.AddDbContext<SGPContext>(
             options => options.UseSqlServer(connectionString)
             );
