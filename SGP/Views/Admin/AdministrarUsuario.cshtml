@@ -1,4 +1,5 @@
-﻿
+﻿@model SGP.Models.Usuario
+
 @{
     ViewData["Title"] = "AdministrarUsuario";
 }
@@ -6,34 +7,31 @@
 <h1 class="title">Administrar usuario</h1>
 
 <form method="post">
-    <div class="barra-busqueda"> 
-        <label for="">Buscar documento</label>
-        <input type="text" placeholder="Documento aquí...">
+    <div class="barra-busqueda">
+        <label asp-for="Documento">Buscar documento</label>
+        <input asp-for="Documento" type="text" placeholder="Documento aquí...">
         <button type="submit" class="btn btn-secondary">Buscar</button>
     </div>
-</form>
 
-<div class="bltbl"><table>
-  <tr>
-    <th>Nombre</th>
-    <th>N.documento</th>
-    <th>Rol</th>
-    <th>Fec. Modificacion</th>
-    <th></th>
-  </tr>
-  <tr>
-    <td class="td nombre-usuario"></td>
-    <td class="td documento-usuario"></td>
-    <td class="td rol-usuario"></td>
-    <td>
-       <input type="date" id="start" name="Calendario"
-       value="2018-07-22"
-       min="1995-01-01" max="2030-12-31">
-   </td>
-    <td>
-        <button class="btn btn-secondary">Editar</button>
-        <button class="btn btn-secondary">eliminar</button>
-    </td>   
-  </tr>
-</table>
-</div>
+    <div class="bltbl">
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>N.documento</th>
+                <th>Rol</th>
+                <th>Genero</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td class="td nombre-usuario"></td>
+                <td class="td documento-usuario"></td>
+                <td class="td rol-usuario"></td>
+                <td class="td genero-usuario"></td>
+                <td>
+                    <button class="btn btn-secondary">Editar</button>
+                    <button class="btn btn-secondary">eliminar</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
