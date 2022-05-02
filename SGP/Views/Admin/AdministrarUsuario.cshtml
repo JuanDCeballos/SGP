@@ -1,37 +1,63 @@
-﻿@model SGP.Models.Usuario
+﻿@model List<SGP.Models.Usuario>
 
-@{
-    ViewData["Title"] = "AdministrarUsuario";
-}
 
-<h1 class="title">Administrar usuario</h1>
 
-<form method="post">
-    <div class="barra-busqueda">
-        <label asp-for="Documento">Buscar documento</label>
-        <input asp-for="Documento" type="text" placeholder="Documento aquí...">
-        <button type="submit" class="btn btn-secondary">Buscar</button>
-    </div>
+        @{
+            ViewData["Title"] = "AdministrarUsuario";
+        }
 
-    <div class="bltbl">
-        <table>
-            <tr>
-                <th>Nombre</th>
-                <th>N.documento</th>
-                <th>Rol</th>
-                <th>Genero</th>
-                <th></th>
-            </tr>
-            <tr>
-                <td class="td nombre-usuario"></td>
-                <td class="td documento-usuario"></td>
-                <td class="td rol-usuario"></td>
-                <td class="td genero-usuario"></td>
-                <td>
-                    <button class="btn btn-secondary">Editar</button>
-                    <button class="btn btn-secondary">eliminar</button>
-                </td>
-            </tr>
-        </table>
-    </div>
-</form>
+        <h1 class="title">Administrar usuario</h1>
+
+        <form method="post">
+            <div class="barra-busqueda">
+                <label asp-for="Documento">Buscar documento</label>
+                @*<input asp-for="Documento" type="text" placeholder="Documento aquí...">*@
+                <button type="submit" class="btn btn-secondary">Buscar</button>
+            </div>
+
+            <div class="bltbl">
+                <table>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model[0].Nombre)</th>
+                        <th>@Html.DisplayNameFor(model => model[0].Apellido)</th>
+                        <th>@Html.DisplayNameFor(model => model[0].Rol)</th>
+                        <th>@Html.DisplayNameFor(model => model[0].Genero)</th>
+                        <th>@Html.DisplayNameFor(model => model[0].Email)</th>
+                        <th>@Html.DisplayNameFor(model => model[0].Documento)</th>
+                        <th></th>
+                    </tr>
+
+                    <tr>
+                        <td class="td nombre-usuario">@Html.DisplayFor(modelItem => modelItem[0].Nombre)</td>
+                        <td class="td apellido-usuario">@Html.DisplayFor(modelItem => modelItem[0].Apellido)</td>
+                        <td class="td rol-usuario">@Html.DisplayFor(modelItem => modelItem[0].Rol)</td>
+                        <td class="td genero-usuario">@Html.DisplayFor(modelItem => modelItem[0].Genero)</td>
+                        <td class="td email-usuario">@Html.DisplayFor(modelItem => modelItem[0].Email)</td>
+                        <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem[0].Documento)</td>
+                        <td>
+                            <button class="btn btn-secondary">Editar</button>
+                            <button class="btn btn-secondary">eliminar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        @*<td>@Html.ActionLink("Edit", "Edit", new { IdUsuario = Model.IdUsuario })</td>
+                            <td>@Html.ActionLink("Delete", "Delete", new { IdUsuario = Model.IdUsuario })</td>*@
+                    </tr>
+                    <!--
+                    <tr>
+                        <td class="td nombre-usuario"></td>
+                        <td class="td apellido-usuario"></td>
+                        <td class="td rol-usuario"></td>
+                        <td class="td genero-usuario"></td>
+                        <td class="td email-usuario"></td>
+                        <td class="td documento-usuario"></td>
+                        <td>
+                            <button class="btn btn-secondary">Editar</button>
+                            <button class="btn btn-secondary">eliminar</button>
+                        </td>
+                    </tr>
+                        -->
+                </table>
+            </div>
+        </form>
