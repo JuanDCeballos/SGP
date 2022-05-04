@@ -1,4 +1,5 @@
 ﻿@model SGP.Models.Usuario
+@*@model List<SGP.Models.Usuario>*@
 
 @{
 	ViewData["Title"] = "AdministrarUsuario";
@@ -23,7 +24,7 @@
 				<th>@Html.DisplayNameFor(model => model.Email)</th>
 				<th>@Html.DisplayNameFor(model => model.Documento)</th>
 				<th>@Html.DisplayNameFor(model => model.Telefono)</th>
-				<th></th>
+				@*<th></th>*@
 			</tr>
 
 			<tr>
@@ -34,15 +35,19 @@
 				 <td class="td email-usuario">@Html.DisplayFor(modelItem => modelItem.Email)</td>
 				 <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.Documento)</td>
 				 <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.Telefono)</td>
-				 <td>
+				 @*<td>
 					<button class="btn btn-secondary">Editar</button>
 					<button class="btn btn-secondary">eliminar</button>
-				 </td>
+				 </td>*@
 			</tr>
-			@*<tr>
-			   <a>@Html.ActionLink("Edit", "EditId", new { IdUsuario = Model.IdUsuario }, new { IdUsuario = Model.IdUsuario })</a>
-			   <a>@Html.ActionLink("Delete", "DeleteId", new { IdUsuario = Model.IdUsuario }, new { IdUsuario = Model.IdUsuario })</a>
-			</tr>*@
+			@{
+				if (Model != null) {
+					<td>
+					   @Html.ActionLink("Editar", "Edit", "AdminController", new { id = Model.IdUsuario }, null)
+					   @Html.ActionLink("Eliminar", "Delete", "AdminController", new { id = Model.IdUsuario }, null)
+					</td>
+					}
+			}
 		 </table>
 	</div>
 </form>
