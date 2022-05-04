@@ -56,5 +56,19 @@ namespace SGP.Controllers
         {
             return View();
         }
+
+        public ActionResult Edit(Usuario usuario, int id)
+        {
+            var buscarUsuario = context.Usuarios.Where(us => us.IdUsuario == id);
+
+            return View(buscarUsuario);
+        }
+
+        public ActionResult Delete(Usuario usuario, int id)
+        {
+            var buscarUsuario = context.Usuarios.Where(us => us.IdUsuario == id);
+
+            return View(buscarUsuario);
+        }
     }
 }
