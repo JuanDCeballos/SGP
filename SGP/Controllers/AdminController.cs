@@ -18,7 +18,8 @@ namespace SGP.Controllers
 
         public IActionResult AdministrarUsuario()
         {
-            return View();
+            Usuario us = new Usuario();
+            return View(us);
         }
 
         public IActionResult CrearUsuario()
@@ -44,6 +45,9 @@ namespace SGP.Controllers
             return View();
         }
 
+
+
+
         [HttpPost]
         public IActionResult AdministrarUsuario(Usuario usuario)
         {
@@ -61,18 +65,37 @@ namespace SGP.Controllers
             return View();
         }
 
-        public ActionResult Edit(Usuario usuario, int id)
+        public ActionResult Edit(Usuario usuario)
         {
-            var buscarUsuario = context.Usuarios.Where(us => us.IdUsuario == id);
 
-            return View(buscarUsuario);
+            Usuario user = context.Usuarios.Find(usuario.IdUsuario);
+
+            if (user == null) {
+                return ViewBag.mensaje = "Error al editar el usuaiario";
+            }
+
+            usuario.Nombre = "";
+            usuario.Apellido = "";
+
+            context.Usuarios.Update(usuario);
+
+            return View();
         }
 
-        public ActionResult Delete(Usuario usuario, int id)
+        public ActionResult Delete(Usuario usuario)
         {
-            var buscarUsuario = context.Usuarios.Where(us => us.IdUsuario == id);
+            Usuario user = context.Usuarios.Find(usuario.IdUsuario);
 
-            return View(buscarUsuario);
+            if (user == null)
+            {
+                return ViewBag.mensaje = "Error al eliminar el usuario";
+            }
+            else
+            {
+                context.Remove(user);
+                context.SaveChanges();
+            }
+            return RedirectToAction("AdministrarUsuario");
         }
     }
 }
