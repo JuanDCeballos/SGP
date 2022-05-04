@@ -1,11 +1,13 @@
 ﻿@model SGP.Models.Usuario
-@*@model List<SGP.Models.Usuario>*@
+
 
 @{
 	ViewData["Title"] = "AdministrarUsuario";
 }
 
 <h1 class="title">Administrar usuario</h1>
+
+<h2>@ViewBag.mensaje</h2>
 
 <form method="post">
 	<div class="barra-busqueda">
@@ -16,38 +18,42 @@
 
 	<div class="bltbl">
 		<table>
-			<tr>
-				<th>@Html.DisplayNameFor(model => model.Nombre)</th>
-				<th>@Html.DisplayNameFor(model => model.Apellido)</th>
-				<th>@Html.DisplayNameFor(model => model.Rol)</th>
-				<th>@Html.DisplayNameFor(model => model.Genero)</th>
-				<th>@Html.DisplayNameFor(model => model.Email)</th>
-				<th>@Html.DisplayNameFor(model => model.Documento)</th>
-				<th>@Html.DisplayNameFor(model => model.Telefono)</th>
-				@*<th></th>*@
-			</tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                <th>@Html.DisplayNameFor(model => model.Apellido)</th>
+                <th>@Html.DisplayNameFor(model => model.Rol)</th>
+                <th>@Html.DisplayNameFor(model => model.Genero)</th>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                <th>@Html.DisplayNameFor(model => model.Documento)</th>
+                <th>@Html.DisplayNameFor(model => model.Telefono)</th>
+                <th>@Html.DisplayNameFor(model => model.IdPrograma)</th>
+                @*<th></th>*@
+            </tr>
 
-			<tr>
-				 <td class="td nombre-usuario">@Html.DisplayFor(modelItem => modelItem.Nombre)</td>
-				 <td class="td apellido-usuario">@Html.DisplayFor(modelItem => modelItem.Apellido)</td>
-				 <td class="td rol-usuario">@Html.DisplayFor(modelItem => modelItem.Rol)</td>
-				 <td class="td genero-usuario">@Html.DisplayFor(modelItem => modelItem.Genero)</td>
-				 <td class="td email-usuario">@Html.DisplayFor(modelItem => modelItem.Email)</td>
-				 <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.Documento)</td>
-				 <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.Telefono)</td>
-				 @*<td>
-					<button class="btn btn-secondary">Editar</button>
-					<button class="btn btn-secondary">eliminar</button>
-				 </td>*@
-			</tr>
-			@{
-				if (Model != null) {
+            <tr>
+                <td class="td nombre-usuario">@Html.DisplayFor(modelItem => modelItem.Nombre)</td>
+                <td class="td apellido-usuario">@Html.DisplayFor(modelItem => modelItem.Apellido)</td>
+                <td class="td rol-usuario">@Html.DisplayFor(modelItem => modelItem.Rol)</td>
+                <td class="td genero-usuario">@Html.DisplayFor(modelItem => modelItem.Genero)</td>
+                <td class="td email-usuario">@Html.DisplayFor(modelItem => modelItem.Email)</td>
+                <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.Documento)</td>
+                <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.Telefono)</td>
+                <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.IdPrograma)</td>
+                @*<td>
+           <button class="btn btn-secondary">Editar</button>
+           <button class="btn btn-secondary">eliminar</button>
+        </td>*@
+            </tr>
+			
+				
 					<td>
-					   @Html.ActionLink("Editar", "Edit", "AdminController", new { id = Model.IdUsuario }, null)
-					   @Html.ActionLink("Eliminar", "Delete", "AdminController", new { id = Model.IdUsuario }, null)
+					   @Html.ActionLink("Editar", "Edit", new { IdUsuario = Model.IdUsuario })
 					</td>
-					}
-			}
+                    <td>
+                        @Html.ActionLink("Eliminar", "Delete", new { IdUsuario = Model.IdUsuario })
+                    </td>
+					
+			
 		 </table>
 	</div>
 </form>
