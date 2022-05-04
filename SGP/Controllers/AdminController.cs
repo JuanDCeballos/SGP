@@ -47,9 +47,13 @@ namespace SGP.Controllers
         [HttpPost]
         public IActionResult AdministrarUsuario(Usuario usuario)
         {
-            var buscarUsuario = context.Usuarios.Where(u => u.Documento.Contains(usuario.Documento)).First();
+            var buscarUsuario = context.Usuarios.Where(u => u.Documento.Contains(usuario.Documento));
 
-            return View(buscarUsuario);
+            if (buscarUsuario != null)
+            {
+                return View(buscarUsuario.FirstOrDefault());
+            }
+            return View();
         }
 
         public IActionResult Admin()
