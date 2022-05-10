@@ -35,6 +35,7 @@ namespace SGP.Controllers
         [HttpPost]
         public IActionResult CrearUsuario(Usuario usuario)
         {
+
             context.Add(usuario);
             context.SaveChanges();
             ViewBag.genero = context.Generos.ToList();
@@ -51,6 +52,7 @@ namespace SGP.Controllers
         [HttpPost]
         public IActionResult AdministrarUsuario(Usuario usuario)
         {
+
             var buscarUsuario = context.Usuarios.Where(u => u.Documento.Contains(usuario.Documento));
 
             if (buscarUsuario != null)
@@ -65,25 +67,36 @@ namespace SGP.Controllers
             return View();
         }
 
+        public ActionResult Edit(Usuario usuario, int IdUsuario)
+        {
+
+            Usuario user = context.Usuarios.Where(u => u.IdUsuario == IdUsuario).FirstOrDefault();
+
+            if (user == null) {
+                return View("AdministrarUsuario");
+            }
+
+            ViewBag.genero = context.Generos.ToList();
+            ViewBag.rol = context.Rols.ToList();
+            ViewBag.programa = context.Programas.ToList();
+            ViewBag.tipoDoc = context.TipoDocumentos.ToList();
+
+            return View(user);
+        }
+
+        [HttpPost]
         public ActionResult Edit(Usuario usuario)
         {
 
-            Usuario user = context.Usuarios.Find(usuario.IdUsuario);
-
-            if (user == null) {
-                return ViewBag.mensaje = "Error al editar el usuaiario";
-            }
-
-            usuario.Nombre = "";
-            usuario.Apellido = "";
-
             context.Usuarios.Update(usuario);
+            context.SaveChanges();
 
-            return View();
+            return View("Admin");
         }
 
         public ActionResult Delete(Usuario usuario)
         {
+
             Usuario user = context.Usuarios.Find(usuario.IdUsuario);
 
             if (user == null)
