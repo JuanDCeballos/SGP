@@ -7,8 +7,6 @@
 
 <h1 class="title">Administrar usuario</h1>
 
-<h2>@ViewBag.mensaje</h2>
-
 <form method="post">
 	<div class="barra-busqueda">
 		<label asp-for="Documento">Buscar documento</label>
@@ -27,7 +25,6 @@
                 <th>@Html.DisplayNameFor(model => model.Documento)</th>
                 <th>@Html.DisplayNameFor(model => model.Telefono)</th>
                 <th>@Html.DisplayNameFor(model => model.IdPrograma)</th>
-                @*<th></th>*@
             </tr>
 
             <tr>
@@ -39,21 +36,13 @@
                 <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.Documento)</td>
                 <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.Telefono)</td>
                 <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.IdPrograma)</td>
-                @*<td>
-           <button class="btn btn-secondary">Editar</button>
-           <button class="btn btn-secondary">eliminar</button>
-        </td>*@
             </tr>
-			
-				
-					<td>
-					   @Html.ActionLink("Editar", "Edit", new { IdUsuario = Model.IdUsuario })
-					</td>
-                    <td>
-                        @Html.ActionLink("Eliminar", "Delete", new { IdUsuario = Model.IdUsuario })
-                    </td>
-					
-			
+				<td>
+				    @Html.ActionLink("Editar", "Edit", new { IdUsuario = Model.IdUsuario })
+				</td>
+                <td>
+                    @Html.ActionLink("Eliminar", "Delete", new { IdUsuario = Model.IdUsuario })
+                </td>
 		 </table>
 	</div>
 </form>
