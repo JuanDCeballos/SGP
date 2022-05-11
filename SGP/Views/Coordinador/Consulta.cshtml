@@ -1,39 +1,47 @@
+@model SGP.Models.Usuario
+
 @{
     ViewData["Title"] = "Consulta";
 }
 
 <h1 class="title">Consulta</h1>
 
-<div class="barra-busqueda"> 
-    <label for="">Buscar documento</label>
-    <input type="text" placeholder="Documento aquí...">
-</div>
+<form method="post">
+    <div class="barra-busqueda">
+        <label asp-for="Documento">Buscar documento</label>
+        <input asp-for="Documento" type="text" placeholder="Documento aquí...">
+        <button type="submit" class="btn btn-secondary">Buscar</button>
+    </div>
 
-<div>
-    <table>
-        <tr>
-            <th>Nombre</th>
-            <th>Programa</th>
-            <th>Correo</th>
-            <th>Telefono</th>
-            <th>Valor Pagado</th>
-            <th>Fecha de pago</th>
-            <th>Estado</th>
-            <th></th>
-        </tr>
-        <tr>
-            <td>kurt julio jaramillo cobain</td>
-            <td>Tecnologia en sistemas</td>
-            <td>kurtjaramillo@gmail.com</td>
-            <td>3117634583</td>
-            <td>1.200.000</td>
-            <td>01/02/2022</td>
-            <td>Activo</td>
-            <td><button class="btn btn-secondary">Descargar informe</button></td>   
-        </tr>
-    </table>
-</div>
+    <div class="bltbl">
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                <th>@Html.DisplayNameFor(model => model.Apellido)</th>
+                <th>@Html.DisplayNameFor(model => model.Rol)</th>
+                <th>@Html.DisplayNameFor(model => model.Genero)</th>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                <th>@Html.DisplayNameFor(model => model.Documento)</th>
+                <th>@Html.DisplayNameFor(model => model.Telefono)</th>
+                <th>@Html.DisplayNameFor(model => model.IdPrograma)</th>
+            </tr>
 
-<div class="buttons">
-    <button class="btn btn-secondary">Volver</button>
-</div>
+            <tr>
+                <td class="td nombre-usuario">@Html.DisplayFor(modelItem => modelItem.Nombre)</td>
+                <td class="td apellido-usuario">@Html.DisplayFor(modelItem => modelItem.Apellido)</td>
+                <td class="td rol-usuario">@Html.DisplayFor(modelItem => modelItem.Rol)</td>
+                <td class="td genero-usuario">@Html.DisplayFor(modelItem => modelItem.Genero)</td>
+                <td class="td email-usuario">@Html.DisplayFor(modelItem => modelItem.Email)</td>
+                <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.Documento)</td>
+                <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.Telefono)</td>
+                <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.IdPrograma)</td>
+            </tr>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { IdUsuario = Model.IdUsuario })
+            </td>
+            <td>
+                @Html.ActionLink("Eliminar", "Delete", new { IdUsuario = Model.IdUsuario })
+            </td>
+        </table>
+    </div>
+</form>
