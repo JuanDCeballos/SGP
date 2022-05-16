@@ -1,70 +1,58 @@
+@model SGP.Models.Usuario
+
 @{
     ViewData["Title"] = "Entrevistas";
 }
 
 <h1 class="title">@ViewData["Title"]</h1>
-<div class="bloque"></div>
 
-<div class="barra-busqueda"> 
-    <label for="">Buscar documento</label>
-    <input type="text" placeholder="Documento aquí...">
-</div>
+<form method="post">
+    <div class="barra-busqueda">
+		<label asp-for="Documento">Buscar documento</label>
+		<input asp-for="Documento" type="text" placeholder="Documento aquí...">
+		<button type="submit" class="btn btn-secondary">Buscar</button>
+	</div>
 
-<div class="bl1">
-     
- <div class="Tdocumento">
-     <label for="">Tipo de documento:</label>
-   
-        <select name="Documento">
-            <option>Tarjeta de identidad</option>
-            <option>Cedula</option>
-            <option>C.E </option>
-            <option>T.I </option>
-        </select>
+    <div class="bltbl">
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.TipoDoc)</th>
+                <th>@Html.DisplayNameFor(model => model.IdPrograma)</th>
+                <th>@Html.DisplayNameFor(model => model.Telefono)</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(modelItem => modelItem.TipoDoc)</td>
+                <td>@Html.DisplayFor(modelItem => modelItem.IdPrograma)</td>
+                <td>@Html.DisplayFor(modelItem => modelItem.Telefono)</td>
+            </tr>
+        </table>
     </div>
 
-    <div class="programa">
-        <label for="">Programa:</label>
-
-        <select name="Programa">
-            <option>Maestria</option>
-            <option>MGTI</option>
-            <option>Esp.TI</option>
-        </select>
-    </div> 
-
-    <div class="Nombres"><label for="">Telefono:</label>
-    <input type="text" placeholder="Telefono..."></div>
-</div>
-
-<div class="bl2">
-
-   <div class="ndocumento"><label for="">Numero de documento:</label>
-   <input type="text" placeholder="Numero de documento..."></div>
-
-   <div class="genero">
-       <label for="">Genero:</label>
-
-        <select name="Genero">
-            <option>Masculino</option>
-            <option>Femenino</option>
-            <option>Otres</option>
-        </select>
-   </div>
-
-   <div class="correo"><label for="">Correo:</label>
-   <input type="text" placeholder="correo..."></div>
-</div>
-
-<div class="barra-busqueda"> 
-    <p>¿Es egresado?</p>
-    <div class="r-buttons">
-        <button class="btn btn-secondary">Si</button>
-        <button class="btn btn-secondary">No</button>
+    <div class="bltbl">
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Documento)</th>
+                <th>@Html.DisplayNameFor(model => model.Genero)</th>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(modelItem => modelItem.Documento)</td>
+                <td>@Html.DisplayFor(modelItem => modelItem.Genero)</td>
+                <td>@Html.DisplayFor(modelItem => modelItem.Email)</td>
+            </tr>
+        </table>
     </div>
-</div>
 
-<div class="buttons">
-    <button class="btn btn-secondary">Guardar</button>
-    <button class="btn btn-secondary">cancelar</button>
-</div>
+    <div class="barra-busqueda"> 
+        <p>¿Es egresado?</p>
+        <div class="r-buttons">
+            <button class="btn btn-secondary">Si</button>
+            <button class="btn btn-secondary">No</button>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="btn btn-secondary">Guardar</button>
+        <button class="btn btn-secondary">cancelar</button>
+    </div>
+</form>
