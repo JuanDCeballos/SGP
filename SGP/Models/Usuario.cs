@@ -16,13 +16,19 @@ namespace SGP.Models
         }
 
         public int IdUsuario { get; set; }
+
+        [Required]
+        [MinLength(5)]
         public string Nombre { get; set; }
 
         [Required]
-        [MinLength(10)]
+        [MinLength(5)]
         public string Apellido { get; set; }
         public int? Genero { get; set; }
         public int? TipoDoc { get; set; }
+
+        [Required]
+        [MinLength(10)]
         public string Documento { get; set; }
         public int? IdPrograma { get; set; }
 
