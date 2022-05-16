@@ -36,12 +36,6 @@
                 <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.Telefono)</td>
                 <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.IdPrograma)</td>
             </tr>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { IdUsuario = Model.IdUsuario })
-            </td>
-            <td>
-                @Html.ActionLink("Eliminar", "Delete", new { IdUsuario = Model.IdUsuario })
-            </td>
         </table>
     </div>
 </form>
