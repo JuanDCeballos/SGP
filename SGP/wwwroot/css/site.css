@@ -454,3 +454,11 @@ th {
   height: 200px;
   background-color: #ccc;
 }
+
+/* Edit user inf. Style
+-------------------------------------------------- */
+.edit-container {
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+}
