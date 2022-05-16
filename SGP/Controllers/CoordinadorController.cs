@@ -36,6 +36,19 @@ namespace SGP.Controllers
 
         public IActionResult Entrevistas()
         {
+            Usuario us = new Usuario();
+            return View(us);
+        }
+
+        [HttpPost]
+        public IActionResult Entrevistas(Usuario usuario)
+        {
+            var buscarUsuario = context.Usuarios.Where(u => u.Documento.Contains(usuario.Documento));
+
+            if (buscarUsuario != null)
+            {
+                return View(buscarUsuario.FirstOrDefault());
+            }
             return View();
         }
 
