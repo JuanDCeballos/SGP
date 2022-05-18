@@ -1,4 +1,5 @@
-@model SGP.Models.Usuario
+@*@model SGP.Models.Usuario*@
+@model SGP.Models.Entrevistum
 
 @{
     ViewData["Title"] = "Entrevistas";
@@ -7,7 +8,7 @@
 <h1 class="title">@ViewData["Title"]</h1>
 
 <form method="post">
-    <div class="barra-busqueda">
+    @*<div class="barra-busqueda">
 		<label asp-for="Documento">Buscar documento</label>
 		<input asp-for="Documento" type="text" placeholder="Documento aquí...">
 		<button type="submit" class="btn btn-secondary">Buscar</button>
@@ -53,6 +54,31 @@
 
     <div class="buttons">
         <button class="btn btn-secondary">Guardar</button>
+        <button class="btn btn-secondary">cancelar</button>
+    </div>*@
+    <div class="bltbl">
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FechaEntrevista)</th>
+                <th>@Html.DisplayNameFor(model => model.Estado)</th>
+                <th>@Html.DisplayNameFor(model => model.IdUsuario)</th>
+            </tr>
+            <tr>
+                <td>
+                    <input asp-for="FechaEntrevista" type="date">
+                </td>
+                <td>
+                    <input asp-for="Estado" type="text">
+                </td>
+                <td>
+                    <input asp-for="IdUsuario" type="text">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="buttons">
+        <button class="btn btn-secondary" type="submit">Guardar</button>
         <button class="btn btn-secondary">cancelar</button>
     </div>
 </form>
