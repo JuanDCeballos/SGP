@@ -1,52 +1,58 @@
+@model SGP.Models.Programacion
+
 @{
     ViewData["Title"] = "Programar Asignaturas";
 }
 
 <h1 class="title">Programar Asignaturas</h1>
 
-<div class="Asignatura-contenedor">
-    <div class="select-semestre">
-        <input type="number" min="1" max="10">
+<form method="post">
+    <div class="Asignatura-contenedor">
+        <div class="select-semestre">
+            <label asp-for="Semestre">Semestre</label>
+            <input asp-for="Semestre" type="number" min="1" max="10">
+        </div>
+        <div class="select-programa">
+            <label>Asignatura</label>
+            @Html.DropDownList("IdPrograma", new SelectList(ViewBag.Programa, "IdPrograma", "ValPrograma"));
+        </div>
     </div>
-    <div class="select-programa">
-        <select name="Programa">
-        <option>Maestria</option>
-        <option>MGTI</option>
-        <option>Esp.TI</option>
-        </select>
+
+    <div>
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FechaInicio)</th>
+                <th>@Html.DisplayNameFor(model => model.FechaFin)</th>
+                <th>@Html.DisplayNameFor(model => model.Bloque)</th>
+                <th>@Html.DisplayNameFor(model => model.Salon)</th>
+                <th>@Html.DisplayNameFor(model => model.IdModulo)</th>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <input asp-for="FechaInicio" type="date">
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <input asp-for="FechaFin" type="date">
+                    </div>
+                </td>
+                <td>
+                    <input asp-for="Bloque" type="number" min="1" max="13">
+                </td>
+                <td>
+                    <input asp-for="Salon" type="number">
+                </td>
+                <td>
+                    <input asp-for="IdModulo" type="number">
+                </td>
+            </tr>
+        </table>
     </div>
-</div>
 
-<div>
-    <table>
-        <tr>
-            <th>Fecha inicio</th>
-            <th>Fecha fin</th>
-            <th>Bloque</th>
-            <th>Sala. Modulo</th>
-            <th>Codigo asignatura</th>
-        </tr>
-        <tr>
-            <td>
-                <input type="date">
-            </td>
-            <td>
-                <input type="date">
-            </td>
-            <td>
-                <input type="number" min="1" max="13">
-            </td>
-            <td>
-                <input type="text">
-            </td>
-            <td>
-                <input type="text">
-            </td>
-        </tr>
-    </table>
-</div>
-
-<div class="buttons">
-    <button class="btn btn-secondary">Volver</button>
-    <button class="btn btn-secondary">Añadir</button>
-</div>
+    <div class="buttons">
+        <button class="btn btn-secondary">Volver</button>
+        <button class="btn btn-secondary" type="submit">Añadir</button>
+    </div>
+</form>
