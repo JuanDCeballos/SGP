@@ -36,19 +36,23 @@ namespace SGP.Controllers
 
         public IActionResult Entrevistas()
         {
-            Usuario us = new Usuario();
-            return View(us);
+            //Usuario us = new Usuario();
+            //return View(us);
+            return View();
         }
 
         [HttpPost]
-        public IActionResult Entrevistas(Usuario usuario)
+        public IActionResult Entrevistas(Entrevistum entrevista)
         {
-            var buscarUsuario = context.Usuarios.Where(u => u.Documento.Contains(usuario.Documento));
+            //var buscarUsuario = context.Usuarios.Where(u => u.Documento.Contains(usuario.Documento));
 
-            if (buscarUsuario != null)
-            {
-                return View(buscarUsuario.FirstOrDefault());
-            }
+            //if (buscarUsuario != null)
+            //{
+            //    return View(buscarUsuario.FirstOrDefault());
+            //}
+            context.Add(entrevista);
+            context.SaveChanges();
+
             return View();
         }
 
@@ -59,6 +63,18 @@ namespace SGP.Controllers
 
         public IActionResult ProgramarAsignaturas()
         {
+            ViewBag.programa = context.Programas.ToList();
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ProgramarAsignaturas(Programacion programacion)
+        {
+            context.Add(programacion);
+            context.SaveChanges();
+
+            ViewBag.programa = context.Programas.ToList();
             return View();
         }
 
