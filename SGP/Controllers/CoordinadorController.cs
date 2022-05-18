@@ -61,6 +61,16 @@ namespace SGP.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Homologar(Homologacion homologar)
+        {
+
+            context.Add(homologar);
+            context.SaveChanges();
+
+            return View();
+        }
+
         public IActionResult ProgramarAsignaturas()
         {
             ViewBag.programa = context.Programas.ToList();
