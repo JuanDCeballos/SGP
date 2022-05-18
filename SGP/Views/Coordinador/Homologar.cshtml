@@ -1,80 +1,48 @@
+@model SGP.Models.Homologacion
+
 @{
     ViewData["Title"] = "Homologar";
 }
 
 <h1 class="title">Homologar</h1>
 
-<div class="barra-busqueda"> 
-    <label for="">Buscar documento</label>
-    <input type="text" placeholder="Documento aquí...">
-</div>
+<form method="post">
+    <div>
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FechaHomologacion)</th>
+                <th>@Html.DisplayNameFor(model => model.Universidad)</th>
+                <th>@Html.DisplayNameFor(model => model.Nota)</th>
+                <th>@Html.DisplayNameFor(model => model.IdPrograma)</th>
+                <th>@Html.DisplayNameFor(model => model.IdModulo)</th>
+                <th>@Html.DisplayNameFor(model => model.IdUsuario)</th>
+            </tr>
+            <tr>
+                <td>
+                    <input asp-for="FechaHomologacion" type="date">
+                </td>
+                <td>
+                    <input asp-for="Universidad" type="text">
+                </td>
+                <td>
+                    <input asp-for="Nota" type="number" step=".01">
+                </td>
+                <td>
+                    <input asp-for="IdPrograma" type="number">
+                </td>
+                <td>
+                    <input asp-for="IdModulo" type="number">
+                </td>
+                <td>
+                    <input asp-for="IdUsuario" type="number">
+                </td> 
+            </tr>
+        </table>
 
-<div>
-    <table>
-        <tr>
-            <th>Fecha elaboracion</th>
-            <th>Nombre</th>
-            <th>Programa</th>
-            <th>Periodo academico</th>
-            <th>Documento</th>
-            <th>Tipo homologacion</th>
-        </tr>
-        <tr>
-            <td>
-                <input type="date">
-            </td>
-            <td>
-                <input type="text">
-            </td>
-            <td>
-                <input type="text">
-            </td>
-            <td>
-                <input type="date">
-            </td>
-            <td>
-                <input type="text">
-            </td>
-            <td>
-                <input type="text">
-            </td>  
-        </tr>
-    </table>
-
-    <table class="info-homologar">
-        <tr>
-            <th>Nombre</th>
-            <th>Codigo</th>
-            <th>Nombre asignatura</th>
-            <th>Creditos</th>
-            <th>Nivel</th>
-            <th>Programa</th>
-            <th>Universidad</th>
-            <th>Asig a homologar</th>
-            <th>Cod asignatura</th>
-            <th>Creditos</th>
-            <th>Nota</th>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td> 
-        </tr>
-    </table>
-</div>
-
-<div class="buttons">
-    <button class="btn btn-secondary">Volver</button>
-    <div class="r-buttons">
-        <button class="btn btn-secondary">Añadir</button>
-        <button class="btn btn-secondary">Guardar</button>
+    <div class="buttons">
+        <button class="btn btn-secondary">Volver</button>
+        <div class="r-buttons">
+            <button class="btn btn-secondary" type="submit">Guardar</button>
+        </div>
     </div>
-</div>
+</form>
