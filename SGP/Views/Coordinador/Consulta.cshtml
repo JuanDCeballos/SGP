@@ -24,6 +24,9 @@
                 <th>@Html.DisplayNameFor(model => model.Documento)</th>
                 <th>@Html.DisplayNameFor(model => model.Telefono)</th>
                 <th>@Html.DisplayNameFor(model => model.IdPrograma)</th>
+                <th>Valor pagado</th>
+                <th>Fecha de pago</th>
+                <th>Programa</th>
             </tr>
 
             <tr>
@@ -35,6 +38,9 @@
                 <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.Documento)</td>
                 <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.Telefono)</td>
                 <td class="td documento-usuario">@Html.DisplayFor(modelItem => modelItem.IdPrograma)</td>
+                <td>@ViewBag.Pago</td>
+                <td>@ViewBag.Fecha</td>
+                <td>@ViewBag.ValPrograma</td>
             </tr>
         </table>
     </div>
