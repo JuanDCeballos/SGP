@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using SGP.Models;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,8 +19,10 @@ namespace SGP.Controllers
 
         public IActionResult Consulta()
         {
-            Usuario us = new Usuario();
-            return View(us);
+            ViewBag.Fecha = null;
+            ViewBag.Pago = null;
+
+            return View();
         }
 
         [HttpPost]
@@ -27,29 +30,33 @@ namespace SGP.Controllers
         {
             var buscarUsuario = context.Usuarios.Where(u => u.Documento.Contains(usuario.Documento) && u.Rol == 3);
 
+            Usuario aux = new Usuario();
+            aux = buscarUsuario.SingleOrDefault();
+            Pago listaPagos = context.Pagos.Where(u => u.IdUsuario == aux.IdUsuario).SingleOrDefault();
+            Programa listaPrograma = context.Programas.Where(u => u.IdPrograma == aux.IdPrograma).SingleOrDefault();
+
+            ViewBag.ValPrograma = listaPrograma.ValPrograma;
+            ViewBag.Pago = listaPagos.Valor;
+            ViewBag.Fecha = listaPagos.Fecha;
+
             if (buscarUsuario != null)
             {
-                return View(buscarUsuario.FirstOrDefault());
+                return View(buscarUsuario.SingleOrDefault());
             }
-            return View();
+            else
+            {
+                return View();
+            }
         }
 
         public IActionResult Entrevistas()
         {
-            //Usuario us = new Usuario();
-            //return View(us);
             return View();
         }
 
         [HttpPost]
         public IActionResult Entrevistas(Entrevistum entrevista)
         {
-            //var buscarUsuario = context.Usuarios.Where(u => u.Documento.Contains(usuario.Documento));
-
-            //if (buscarUsuario != null)
-            //{
-            //    return View(buscarUsuario.FirstOrDefault());
-            //}
             context.Add(entrevista);
             context.SaveChanges();
 
