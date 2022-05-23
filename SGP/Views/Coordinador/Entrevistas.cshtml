@@ -1,4 +1,3 @@
-@*@model SGP.Models.Usuario*@
 @model SGP.Models.Entrevistum
 
 @{
@@ -8,54 +7,6 @@
 <h1 class="title">@ViewData["Title"]</h1>
 
 <form method="post">
-    @*<div class="barra-busqueda">
-		<label asp-for="Documento">Buscar documento</label>
-		<input asp-for="Documento" type="text" placeholder="Documento aquí...">
-		<button type="submit" class="btn btn-secondary">Buscar</button>
-	</div>
-
-    <div class="bltbl">
-        <table>
-            <tr>
-                <th>@Html.DisplayNameFor(model => model.TipoDoc)</th>
-                <th>@Html.DisplayNameFor(model => model.IdPrograma)</th>
-                <th>@Html.DisplayNameFor(model => model.Telefono)</th>
-            </tr>
-            <tr>
-                <td>@Html.DisplayFor(modelItem => modelItem.TipoDoc)</td>
-                <td>@Html.DisplayFor(modelItem => modelItem.IdPrograma)</td>
-                <td>@Html.DisplayFor(modelItem => modelItem.Telefono)</td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="bltbl">
-        <table>
-            <tr>
-                <th>@Html.DisplayNameFor(model => model.Documento)</th>
-                <th>@Html.DisplayNameFor(model => model.Genero)</th>
-                <th>@Html.DisplayNameFor(model => model.Email)</th>
-            </tr>
-            <tr>
-                <td>@Html.DisplayFor(modelItem => modelItem.Documento)</td>
-                <td>@Html.DisplayFor(modelItem => modelItem.Genero)</td>
-                <td>@Html.DisplayFor(modelItem => modelItem.Email)</td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="barra-busqueda"> 
-        <p>¿Es egresado?</p>
-        <div class="r-buttons">
-            <button class="btn btn-secondary">Si</button>
-            <button class="btn btn-secondary">No</button>
-        </div>
-    </div>
-
-    <div class="buttons">
-        <button class="btn btn-secondary">Guardar</button>
-        <button class="btn btn-secondary">cancelar</button>
-    </div>*@
     <div class="bltbl">
         <table>
             <tr>
@@ -78,7 +29,7 @@
     </div>
 
     <div class="buttons">
-        <button class="btn btn-secondary" type="submit">Guardar</button>
         <button class="btn btn-secondary">cancelar</button>
+        <button class="btn btn-secondary" type="submit">Guardar</button>
     </div>
 </form>
